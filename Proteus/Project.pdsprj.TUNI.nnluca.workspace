@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff430000000a0000005d05000052030000</PLACEMENT>
+  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff430000000a0000005d05000052030000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
   <WINDOW type="default" module="ARES"/>
  </FRAME>
@@ -21,9 +21,9 @@
      <ITEM name="Address Column Width">83</ITEM>
      <ITEM name="AutoResize">No</ITEM>
      <ITEM name="Gridlines">Yes</ITEM>
-     <ITEM name="Item 0">"PWM_state","0080012B",00000001,0000000E,299,1,4,00000002,0,00000000,00000000</ITEM>
-     <ITEM name="Item 1">"ICR1","00800086",00000001,0000000E,134,2,4,00000003,0,00000000,00000000</ITEM>
-     <ITEM name="Item 2">"OCR1A","00800088",00000001,0000000E,136,2,4,00000003,0,00000000,00000000</ITEM>
+     <ITEM name="Item 0">"currentTemperature","00800135",00000001,0000000E,309,2,4,00000003,0,00000000,00000000</ITEM>
+     <ITEM name="Item 1">"targetTemperature","00800131",00000001,0000000E,305,2,4,00000003,0,00000000,00000000</ITEM>
+     <ITEM name="Item 2">"dc","00800133",00000001,0000000E,307,2,4,00000003,0,00000000,00000000</ITEM>
      <ITEM name="Item 3">"USART_data","0080013A",00000001,0000000E,314,1,4,00000002,0,00000000,00000000</ITEM>
      <ITEM name="Item 4">"targetTemperature","00800135",00000001,0000000E,309,2,4,00000003,0,00000000,00000000</ITEM>
      <ITEM name="Item 5">"currentTemperature","00800138",00000001,0000000E,312,2,4,00000003,0,00000000,00000000</ITEM>
@@ -37,10 +37,10 @@
      <ITEM name="Value Column Width">83</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="Watch Expression Column Width">83</ITEM>
-     <ITEM name="nItems">6</ITEM>
+     <ITEM name="nItems">3</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="606" x="32" flags="00000023" y="87" h="600" pid="0" iid="13">
+   <POPUP w="606" x="1721" flags="00000023" y="589" h="600" pid="0" iid="13">
     <PROPERTIES>
      <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
@@ -120,7 +120,7 @@
      <ITEM name="nBreakpoints">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="391" x="50" flags="0000000a" y="645" h="391" pid="2" iid="1">
+   <POPUP w="391" x="306" flags="0000000b" y="214" h="391" pid="2" iid="1">
     <PROPERTIES>
      <ITEM name="Address Column Width">94</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -137,7 +137,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1384" x="460" flags="00000000" y="123" h="877" pid="0" iid="38">
+   <POPUP w="1384" x="1701" flags="00008001" y="1142" h="877" pid="0" iid="38">
     <PROPERTIES/>
    </POPUP>
   </PWI>
