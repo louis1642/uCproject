@@ -8,6 +8,7 @@
 
 #include "Tasks.h"
 uint16_t currentTemperature;
+uint16_t dc;
 
 uint16_t abs(int16_t x);
 
@@ -37,34 +38,26 @@ void Task_ReadTargetTemp(void) {
 }
 
 
+
+
 // read current temperature from ADC0, compare with target temperature,
 // then turn on/off PWM to warm up/cool down, and update the status (for the LEDs)
 void Task_Heat(void) {
 	ADC_read(0, &currentTemperature);
-	if (abs(targetTemperature - currentTemperature) < 512) {
-		if (abs(targetTemperature - currentTemperature) < 128) {
-			// OK
-			state_heating = 0;
-		} else if(currentTemperature > targetTemperature) {
-			// COOL DOWN
-			state_heating = 2;
-		} else {
-			// WARM UP
-			state_heating = 1;
-		}
-		PWM_setDutyCycle(targetTemperature);
-		
+	if (abs(targetTemperature - currentTemperature) < 128) {
+		// OK
+		state_heating = 0;
 	} else if(currentTemperature > targetTemperature) {
 		// COOL DOWN
-		PWM_stop();
 		state_heating = 2;
-		
 	} else {
 		// WARM UP
-		PWM_setDutyCycle(100);
-		//PWM_start();
 		state_heating = 1;
 	}
+	
+	dc = (uint16_t)((float)targetTemperature * 100.0 / 1024.0);
+	PWM_setDutyCycle(dc);
+	
 }
 
 
